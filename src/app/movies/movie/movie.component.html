@@ -1,0 +1,8 @@
+<mat-card class="cardStyle" (click)="onMovieCardClick()">
+  <img class="cardMedia" mat-card-image src="{{movie?.poster_path}}" alt="{{movie?.overview}}" matTooltip={{movie?.overview}}>
+  <mat-card-content class="margin">
+    <p style="float:left;width:40%">Votes : {{movie?.vote_average}}</p>
+    <p style="float:right;width:40%">{{movie?.runtime}} minutes</p>
+    <p style="float:left">{{movie?.genres}}</p>
+  </mat-card-content>
+</mat-card>

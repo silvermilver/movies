@@ -1,0 +1,67 @@
+<mat-card class="registerStyle">
+  <mat-card-title class="title">
+    REGISTRATION - Template Driven
+  </mat-card-title>
+  <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Username" required [(ngModel)]="registerModel.username" name="username" #username="ngModel"
+              minlength="5" maxlength="10" (keydown)="eventHandler($event.keyCode)">
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="error">
+          <div class="alert" *ngIf="username.touched && username.pristine && username.errors">
+            Required
+          </div>
+          <div class="alert" *ngIf="username.dirty && username.errors">
+            Username should be between 5 to 10 characters.
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field>
+            <input type="email" matInput placeholder="Email" required [(ngModel)]="registerModel.email" pattern="[a-z0-9._%+-]+@[a-z0-9._]+"
+              name="email" #email="ngModel" (keydown)="eventHandler($event.keyCode)">
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="error">
+          <div class="alert" *ngIf="email.touched && email.pristine && email.errors">
+            Required
+          </div>
+          <div class="alert" *ngIf="email.errors?.pattern">
+            Email is not valid.
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" required [(ngModel)]="registerModel.password" name="password" #password="ngModel"
+              (keydown)="eventHandler($event.keyCode)">
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="error">
+          <div class="alert" *ngIf="password.touched && password.pristine && password.errors">
+            Required
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Confirm Password" required [(ngModel)]="registerModel.confirmPassword" name="confirmPassword"
+              #confirmPassword="ngModel" (keydown)="eventHandler($event.keyCode)">
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="error">
+          <div class="alert" *ngIf="confirmPassword.touched && confirmPassword.pristine && confirmPassword.errors">
+            Required
+          </div>
+          <div class="alert" *ngIf="registerForm.value.confirmPassword !== registerForm.value.password">
+            Password should be same
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid || (registerForm.value.confirmPassword !== registerForm.value.password)">Register</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

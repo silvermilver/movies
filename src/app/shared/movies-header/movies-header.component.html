@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <form class="formStyle">
+      <mat-form-field class="fullWidth">
+        <input type="text" placeholder="Search By {{searchPlaceholder}}" aria-label="String" [(ngModel)]="searchableText" matInput
+          [formControl]="frmControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let title of filteredData | async" [value]="title">
+            {{ title }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    <button mat-raised-button class="gap" color="accent" (click)="onSearchMovie()">
+      <h1>Search</h1>
+    </button>
+    <mat-slide-toggle (change)="onSearchCriteriaChange()" class="gap">Search By Title/Genre</mat-slide-toggle>
+  </mat-toolbar-row>
+</mat-toolbar>

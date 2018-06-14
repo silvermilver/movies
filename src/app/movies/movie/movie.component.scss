@@ -1,0 +1,42 @@
+.cardTitle {
+  padding: 5px !important;
+  float: left;
+}
+
+.cardTitle span {
+  font-size: 12px !important;
+}
+
+.cardStyle {
+  width: 251px;
+  height: 450px;
+  padding: 0px;
+  float: left;
+  margin: 10px;
+}
+
+.mat-card-image {
+  margin: 0px;
+  width: 100%;
+}
+
+.mat-card-image:first-child {
+  margin-top: 0px;
+}
+
+.cardText {
+  float: right;
+  padding: 10px !important;
+}
+
+.margin {
+  margin: 10px;
+  p {
+    margin: 0px 0px 5px 0px;
+  }
+}
+
+::ng-deep .mat-tooltip {
+  background-color: black;
+  font-size: 12px;
+}

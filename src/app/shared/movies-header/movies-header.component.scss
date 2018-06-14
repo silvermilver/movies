@@ -1,0 +1,26 @@
+.formStyle {
+  min-width: 150px;
+  max-width: 2000px;
+  width: 100%;
+  padding:10px 10px 10px 20px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.fullWidth .mat-input-placeholder {
+  color: white;
+}
+
+.fullWidth .mat-input-underline {
+  background-color: #fff;
+}
+
+.fullWidth .mat-input-ripple {
+  background-color: #fff;
+}
+
+.gap{
+  padding-left:10px;
+}

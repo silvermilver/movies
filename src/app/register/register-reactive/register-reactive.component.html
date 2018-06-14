@@ -1,0 +1,77 @@
+<mat-card class="registerStyle">
+  <mat-card-title class="title">
+    REGISTRATION - Reactive
+  </mat-card-title>
+  <form (ngSubmit)="onRegister()" [formGroup]="registerForm">
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Username" formControlName="username" (keydown)="eventHandler($event.keyCode)">
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="error">
+          <div class="alert" *ngIf="username.invalid && username.touched">
+            <p *ngIf="username.errors?.required">
+              Username cannot be blank.
+            </p>
+            <p *ngIf="username.errors?.minlength">
+              Username should be minimum 5 characters.
+            </p>
+            <p *ngIf="username.errors?.maxlength">
+              Username should be max 10 characters.
+            </p>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Email" formControlName="email" (keydown)="eventHandler($event.keyCode)">
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="error">
+          <div class="alert" *ngIf="email.invalid && email.touched">
+            <p *ngIf="email.errors?.required">
+              Email cannot be blank.
+            </p>
+            <p *ngIf="!email.errors?.required && email.errors?.email">
+              This Email Id does not seems right.
+            </p>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password" (keydown)="eventHandler($event.keyCode)">
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="error">
+          <div class="alert" *ngIf="password.invalid && password.touched">
+            <p *ngIf="password.errors?.required">
+              Password cannot be blank.
+            </p>
+            <p *ngIf="password.errors?.minlength">
+              Password should be minimum 8 characters.
+            </p>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword" (keydown)="eventHandler($event.keyCode)">
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item class="error">
+          <div class="alert" *ngIf="(confirmPassword.invalid && confirmPassword.touched) || (password.value && confirmPassword.value && confirmPassword.value !== password.value)">
+            <p *ngIf="confirmPassword.errors?.required">
+              ConfirmPassword cannot be blank.
+            </p>
+            <p *ngIf="(!confirmPassword.errors?.required) && (confirmPassword.value !== password.value)">
+              Password and Confirm Password should be same.
+            </p>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid || (confirmPassword.value !== password.value)">Register</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

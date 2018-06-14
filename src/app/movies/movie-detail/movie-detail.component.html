@@ -1,0 +1,24 @@
+<mat-card class="cardStyle" (click)="onMovieCardClick()">
+  <img class="cardMedia" mat-card-image src="{{movie?.poster_path}}" alt="{{movie?.overview}}">
+  <mat-card-content class="cardContent">
+    <mat-spinner *ngIf="isMovieDescLoading"></mat-spinner>
+    <p id="title">
+      <b>Title</b> : {{movie?.title}}</p>
+    <p id="votes">
+      <b>Votes</b> : {{movie?.vote_average}}/10</p>
+    <p id="voteCount">
+      <b>No of Votes</b> : {{movie?.vote_count}}</p>
+    <p id="releaseDate">
+      <b>Released</b> : {{movie?.release_date}}</p>
+    <p id="overview">
+      <b>About</b> : {{movie?.overview}}</p>
+    <p id="budget">
+      <b>Budget</b> : ${{movie?.budget}}</p>
+    <p id="revenue">
+      <b>Revenue</b> : ${{movie?.revenue}}</p>
+    <p id="genre">
+      <b>Genre</b> : {{movie?.genres}}</p>
+    <p id="runtime">
+      <b>Runtime</b> : {{movie?.runtime}} minutes</p>
+  </mat-card-content>
+</mat-card>

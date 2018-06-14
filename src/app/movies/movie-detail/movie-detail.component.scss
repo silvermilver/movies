@@ -1,0 +1,48 @@
+.cardTitle {
+    padding: 5px !important;
+    float: left;
+  }
+  
+  .cardTitle span {
+    font-size: 12px !important;
+  }
+  
+  .cardStyle {
+    width: 99%;
+    height: 83%;
+    padding: 0px;
+    float: left;
+    margin: 10px;
+  }
+  
+  .mat-card-image {
+    margin: 0px;
+    width: 38%;
+    height:100%;
+    float:left;
+  }
+  
+  .mat-card-image:first-child {
+    margin-top: 0px;
+  }
+  
+  .cardText {
+    float: right;
+    padding: 10px !important;
+  }
+  
+  .cardContent {
+    float: left;
+    margin: 20px;
+    width: 50%;
+    p {
+      margin: 10px;
+      font-size: 20px;
+    }
+  }
+  
+  ::ng-deep .mat-tooltip {
+    background-color: black;
+    font-size: 12px;
+  }
+  

@@ -1,0 +1,29 @@
+.registerStyle {
+  margin: 0;
+  float: left;
+  width: 400px;
+  margin: 30px
+}
+
+.registerStyle .title {
+  text-align: center;
+}
+
+.registerStyle button {
+  width: 100%;
+}
+
+.registerStyle .mat-input-container {
+  width: 300px;
+}
+
+.alert {
+  color: red;
+  font-size: 11px;
+  position: relative;
+  top: -12px;
+}
+
+.error {
+  height: 20px !important;
+}

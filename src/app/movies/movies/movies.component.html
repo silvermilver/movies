@@ -1,0 +1,3 @@
+<app-movies-header [titleList]="titleList" [genreList]="genreList" (searchCriteria)="onSearchMovies($event)"></app-movies-header>
+<app-movie-list *ngIf="movieId === 0" (movieId)="onMovieCardClick($event)" [movieList]="movieList"></app-movie-list>
+<app-movie-detail [movieId]="movieId" *ngIf="movieId !== 0"></app-movie-detail>

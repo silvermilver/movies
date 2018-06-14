@@ -1,0 +1,18 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  script:
+    - npm install
+
+unit_tests_with_coverage:
+  stage: test
+  script: npm run testWithCoverage

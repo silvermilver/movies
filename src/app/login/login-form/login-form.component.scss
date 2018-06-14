@@ -1,0 +1,22 @@
+.loginStyle {
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  .title {
+    text-align: center;
+  }
+  .mat-input-container {
+    width: 300px;
+  }
+  button {
+    width: 100%;
+  }
+  .alert {
+    color: red;
+    font-size: 11px;
+    position: relative;
+    top: -12px;
+  }
+}
